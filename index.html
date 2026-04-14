@@ -85,6 +85,61 @@ nav {
 .nav-links a:hover { color: var(--white); }
 .nav-links a.active-nav { color: var(--white); border-bottom: 2px solid var(--white); padding-bottom: 4px; }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .hamburger { display: block; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(179,134,136,0.98);
+    flex-direction: column;
+    gap: 0;
+    padding: 16px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { text-align: center; }
+  .nav-links a {
+    display: block;
+    padding: 14px 24px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+  }
+  .nav-links a:hover, .nav-links a.active-nav {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  section { padding: 80px 24px; }
+  .hero { padding: 100px 24px 60px; }
+  .hero div[style*="grid-template-columns"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .hero div[style*="320px"] {
+    width: 200px !important;
+    height: 220px !important;
+  }
+}
+
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
@@ -834,7 +889,11 @@ function switchAboutTab(idx) {
   panels[idx].classList.add('active');
   tabs[idx].classList.add('active');
 }
+function toggleNav() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
 function switchPage(pageId) {
+  document.querySelector('.nav-links').classList.remove('open');
   var allPages = document.querySelectorAll('.page-section');
   var allNavLinks = document.querySelectorAll('.nav-links a');
   for (var i = 0; i < allPages.length; i++) {
@@ -860,6 +919,9 @@ function switchPage(pageId) {
 <!-- NAV -->
 <nav>
   <div class="nav-name" style="cursor:pointer;" onclick="switchPage('home')">Orly Backstrom</div>
+  <button class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="#" onclick="switchPage('home');return false;" data-page="home">Home</a></li>
     <li><a href="#" onclick="switchPage('about');return false;" data-page="about">About</a></li>
