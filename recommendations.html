@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <title>Recommendations — Orly Backstrom</title>
+
+  <!-- SEO & Social Sharing -->
+  <meta name="description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:title" content="Orly Backstrom's Portfolio">
+  <meta property="og:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+  <meta property="og:url" content="https://orlybackstrom.com/recommendations.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orly Backstrom's Portfolio">
+  <meta name="twitter:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta name="twitter:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">Orly Backstrom</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="featured-work.html">Featured Work</a>
+        <a href="recommendations.html" class="active">Recommendations</a>
+        <a href="recognition.html">Recognition</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ RECOMMENDATIONS PAGE ============ -->
+  <main class="page">
+    <div class="page-content wide">
+      <h1 class="page-title">Recommendations</h1>
+
+      <div class="recommendations-grid">
+
+        <!-- Card 1 -->
+        <div class="recommendation-card">
+          <p class="recommendation-quote">Hiring Orly onto my team at Intel was one of the best decisions I've made. She is intelligent, organized, diplomatic, and thoughtful. She takes time to understand challenges and quickly devises strategic solutions. Her positive energy is contagious, and she is masterful at building strong relationships.</p>
+          <hr class="recommendation-divider">
+          <p class="recommendation-name">Patricia Oliverio</p>
+          <p class="recommendation-role">Director, Content Policy and Communications · Adobe (formerly Intel)</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="recommendation-card">
+          <p class="recommendation-quote">Orly quickly built strong and constructive relationships within my team, across the broader comms org, and with our very demanding internal stakeholders. There was never any doubt that Orly was a fully committed and present member of the team who delivered strong results. She brought a hunger to learn the industry and deepen her craft as a communicator, and she radiated energy and enthusiasm. I would be thrilled to work with her again and any comms or CSR team would be fortunate to have her.</p>
+          <hr class="recommendation-divider">
+          <p class="recommendation-name">William Moss</p>
+          <p class="recommendation-role">Head of Global Media Relations · TSMC (formerly Intel)</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="recommendation-card">
+          <p class="recommendation-quote">If you have the pleasure to work with Orly, consider yourself one of the lucky ones. She approaches her work with genuine optimism, a collaborative spirit, and a passion for building strong partnerships — with strong communication instincts, attention to detail, and dependable follow-through to everything she does.</p>
+          <hr class="recommendation-divider">
+          <p class="recommendation-name">Sophie Ey</p>
+          <p class="recommendation-role">VP Corporate Reputation &amp; Brand Purpose Communications · We. Communications</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="recommendation-card">
+          <p class="recommendation-quote">Orly joined at a particularly chaotic time for the company and dove in without being rattled. Orly brings a seen-it-all steadiness to her work — a quick study in understanding a business and developing authentic relationships to get things done. Her partners and teammates alike appreciate the optimism, resilience, and collaboration she brings to any project.</p>
+          <hr class="recommendation-divider">
+          <p class="recommendation-name">Sarah Bonta</p>
+          <p class="recommendation-role">Head of Communications · Block, Inc.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="recommendation-card">
+          <p class="recommendation-quote">Orly is exactly the kind of person you build a team around. She is creative, curious, and operates like an owner. Orly inherited ambiguous and ambitious projects, adding operational rigor and creativity to deliver clear, engaging content and programming. Her work ethic and standards don't just elevate her own output, they raise the bar for everyone around her. She brings real executive presence to every room she's in, and that kind of influence is genuinely hard to teach.</p>
+          <hr class="recommendation-divider">
+          <p class="recommendation-name">Adam Kohler</p>
+          <p class="recommendation-role">Director of Corporate Communications · Block, Inc.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="recommendation-card">
+          <p class="recommendation-quote">Orly approaches every problem with a positive, solution-driven attitude — no issue seemed unsolvable for her. Her work ethic, attention to detail, and passion for the cause made my job so much easier. I am grateful to have had the chance to work with such a passionate and talented individual.</p>
+          <hr class="recommendation-divider">
+          <p class="recommendation-name">Belinda Ho</p>
+          <p class="recommendation-role">Finance Manager · Starbucks (formerly Taco Bell Foundation)</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ============ MOBILE NAV TOGGLE ============ -->
+  <script>
+    (function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

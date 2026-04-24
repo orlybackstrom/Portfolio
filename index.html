@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <title>Orly Backstrom — Communications Portfolio</title>
+
+  <!-- SEO & Social Sharing -->
+  <meta name="description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:title" content="Orly Backstrom's Portfolio">
+  <meta property="og:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+  <meta property="og:url" content="https://orlybackstrom.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orly Backstrom's Portfolio">
+  <meta name="twitter:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta name="twitter:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">Orly Backstrom</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="featured-work.html">Featured Work</a>
+        <a href="recommendations.html">Recommendations</a>
+        <a href="recognition.html">Recognition</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <main class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Communications Portfolio</p>
+      <h1 class="hero-name">Orly Backstrom</h1>
+      <p class="hero-tagline">Senior Communications &amp; PR Leader <span class="divider">·</span> Strategic Storyteller <span class="divider">·</span> Narrative, Purpose &amp; Impact</p>
+
+      <blockquote class="hero-quote">
+        <p>I tell purpose-driven stories that connect what a brand does to why it matters.</p>
+      </blockquote>
+
+      <div class="hero-meta">
+        <span>Los Angeles, CA</span>
+        <span class="divider">·</span>
+        <a href="mailto:orlybackstrom@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/orlybackstrom/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <div class="hero-portrait">
+      <img src="images/headshot.jpg" alt="Orly Backstrom">
+    </div>
+  </main>
+
+
+  <!-- ============ MOBILE NAV TOGGLE ============ -->
+  <script>
+    (function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

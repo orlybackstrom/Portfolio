@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <title>Recognition — Orly Backstrom</title>
+
+  <!-- SEO & Social Sharing -->
+  <meta name="description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:title" content="Orly Backstrom's Portfolio">
+  <meta property="og:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+  <meta property="og:url" content="https://orlybackstrom.com/recognition.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orly Backstrom's Portfolio">
+  <meta name="twitter:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta name="twitter:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">Orly Backstrom</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="featured-work.html">Featured Work</a>
+        <a href="recommendations.html">Recommendations</a>
+        <a href="recognition.html" class="active">Recognition</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ RECOGNITION PAGE ============ -->
+  <main class="page">
+    <div class="page-content wide">
+      <p class="recognition-eyebrow">Recognition</p>
+      <h1 class="recognition-heading">Awards</h1>
+
+      <ul class="awards-list">
+        <li class="award-item">
+          <span class="award-year">2025</span>
+          <span class="award-title">Divisional Recognition Award HR Team</span>
+          <span class="award-company">Intel Corporation</span>
+        </li>
+        <li class="award-item">
+          <span class="award-year">2025</span>
+          <span class="award-title">Divisional Recognition Award People Team</span>
+          <span class="award-company">Intel Corporation</span>
+        </li>
+        <li class="award-item">
+          <span class="award-year">2024</span>
+          <span class="award-title">Corporate Social Impact Fearless Leader Award</span>
+          <span class="award-company">Intel Corporation</span>
+        </li>
+        <li class="award-item">
+          <span class="award-year">2023</span>
+          <span class="award-title">Divisional Recognition Award Brand Strategy &amp; Identity Team</span>
+          <span class="award-company">Intel Corporation</span>
+        </li>
+        <li class="award-item">
+          <span class="award-year">2022</span>
+          <span class="award-title">Divisional Recognition Award Global Corporate Comms</span>
+          <span class="award-company">Intel Corporation</span>
+        </li>
+        <li class="award-item">
+          <span class="award-year">2022</span>
+          <span class="award-title">Achieving Breakthrough Results Award (CEO's Highest Honor)</span>
+          <span class="award-company">Taco Bell Corporation</span>
+        </li>
+        <li class="award-item">
+          <span class="award-year">2021</span>
+          <span class="award-title">Andy Pearson Scholarship Recipient</span>
+          <span class="award-company">Taco Bell Foundation</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+
+  <!-- ============ MOBILE NAV TOGGLE ============ -->
+  <script>
+    (function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

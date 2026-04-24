@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <title>Writing — Orly Backstrom</title>
+
+  <!-- SEO & Social Sharing -->
+  <meta name="description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:title" content="Orly Backstrom's Portfolio">
+  <meta property="og:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta property="og:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+  <meta property="og:url" content="https://orlybackstrom.com/writing.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orly Backstrom's Portfolio">
+  <meta name="twitter:description" content="Senior Communications & PR Leader · Strategic Storyteller · Narrative, Purpose & Impact">
+  <meta name="twitter:image" content="https://orlybackstrom.com/images/og-preview.jpg">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-logo">Orly Backstrom</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="featured-work.html">Featured Work</a>
+        <a href="recommendations.html">Recommendations</a>
+        <a href="recognition.html">Recognition</a>
+        <a href="writing.html" class="active">Writing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ WRITING PAGE ============ -->
+  <main class="page">
+    <div class="page-content wide">
+      <h1 class="page-title">Writing Samples</h1>
+
+      <div class="writing-grid">
+
+        <!-- Card 1 -->
+        <a href="https://newsroom.intel.com/opinion/responsibly-harnessing-the-power-of-ai" class="writing-card" target="_blank" rel="noopener">
+          <img src="images/writing-1.jpg" alt="Responsibly Harnessing the Power of AI" class="writing-card-image">
+          <h2 class="writing-card-title">Responsibly Harnessing the Power of&nbsp;AI</h2>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="https://newsroom.intel.com/corporate/intels-commitment-to-building-an-inclusive-and-accessible-world" class="writing-card" target="_blank" rel="noopener">
+          <img src="images/writing-2.jpg" alt="Intel's Commitment to Building an Inclusive and Accessible World" class="writing-card-image">
+          <h2 class="writing-card-title">Intel's Commitment to Building an Inclusive and Accessible&nbsp;World</h2>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="https://newsroom.intel.com/artificial-intelligence/intel-introduces-real-time-deepfake-detector" class="writing-card" target="_blank" rel="noopener">
+          <img src="images/writing-3.jpg" alt="Intel Introduces Real-Time Deepfake Detector" class="writing-card-image">
+          <h2 class="writing-card-title">Intel Introduces Real-Time Deepfake&nbsp;Detector</h2>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="https://newsroom.intel.com/artificial-intelligence/intel-celebrates-ai-innovations-by-students-with-global-impact-festival" class="writing-card" target="_blank" rel="noopener">
+          <img src="images/writing-4.jpg" alt="Intel Celebrates AI Innovations by Students: Global Impact Festival" class="writing-card-image">
+          <h2 class="writing-card-title">Intel Celebrates AI Innovations by Students: Global Impact&nbsp;Festival</h2>
+        </a>
+
+        <!-- Card 5 -->
+        <a href="https://newsroom.intel.com/opinion/how-intel-is-refining-its-approach-to-responsible-ai" class="writing-card" target="_blank" rel="noopener">
+          <img src="images/writing-5.jpg" alt="How Intel Is Refining Its Approach to Responsible AI" class="writing-card-image">
+          <h2 class="writing-card-title">How Intel Is Refining Its Approach to Responsible&nbsp;AI</h2>
+        </a>
+
+        <!-- Card 6 -->
+        <a href="https://newsroom.intel.com/opinion/unlocking-potential-generative-ai" class="writing-card" target="_blank" rel="noopener">
+          <img src="images/writing-6.jpg" alt="Unlocking the Potential of Generative AI" class="writing-card-image">
+          <h2 class="writing-card-title">Unlocking the Potential of Generative&nbsp;AI</h2>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ============ MOBILE NAV TOGGLE ============ -->
+  <script>
+    (function() {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.site-nav');
+      if (!toggle || !nav) return;
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
