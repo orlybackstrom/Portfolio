@@ -143,8 +143,20 @@ img {
   transition: opacity 0.2s ease;
 }
 
-.site-nav a:hover {
-  opacity: 0.85;
+.site-nav a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: #ffffff;
+  transition: width 0.25s ease, left 0.25s ease;
+}
+
+.site-nav a:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .site-nav a.active {
@@ -188,19 +200,31 @@ img {
   font-size: 2.25rem;
   font-weight: 700;
   color: var(--color-ink);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
+}
+
+.page-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-rose);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 /* ---------- Home / Hero ---------- */
 .hero {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 6rem 4rem 8rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 5rem 4rem;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 4rem;
   align-items: center;
+  background: #ffffff;
+  border-top: 4px solid var(--color-rose);
 }
 
 .hero-eyebrow {
@@ -269,7 +293,30 @@ img {
 }
 
 .hero-meta a:hover {
-  color: var(--color-ink);
+  color: #8e6360;
+}
+
+.hero-previously {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5dcd5;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.hero-previously-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-rose);
+  margin-right: 0.85rem;
+}
+
+.hero-previously .divider {
+  color: var(--color-rose);
+  margin: 0 0.5rem;
 }
 
 .hero-portrait {
@@ -501,6 +548,12 @@ img {
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.recommendation-card:hover {
+  border-color: var(--color-rose);
+  transform: translateY(-2px);
 }
 
 .recommendation-quote {
@@ -510,16 +563,21 @@ img {
   color: var(--color-ink);
   margin-bottom: 1.5rem;
   flex-grow: 1;
+  position: relative;
+  padding-top: 1.75rem;
 }
 
 .recommendation-quote::before {
   content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: -0.25rem;
   color: var(--color-rose);
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-right: 0.35rem;
-  vertical-align: -0.1em;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0.85;
 }
 
 .recommendation-divider {
@@ -558,8 +616,25 @@ img {
   font-size: 2.25rem;
   font-weight: 700;
   color: var(--color-ink);
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   letter-spacing: -0.01em;
+}
+
+.recognition-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-rose);
+  margin-top: 1rem;
+}
+
+.recognition-intro {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--color-ink-soft);
+  margin-bottom: 2.5rem;
+  max-width: 560px;
 }
 
 .awards-list {
@@ -570,28 +645,42 @@ img {
 
 .award-item {
   display: grid;
-  grid-template-columns: 70px 1fr auto;
+  grid-template-columns: 90px 1fr auto;
   gap: 2rem;
   align-items: center;
-  padding: 0.85rem 0;
+  padding: 1.1rem 1rem;
+  margin: 0 -1rem;
   border-bottom: 1px solid #ede2d8;
+  transition: background-color 0.2s ease;
+}
+
+.award-item:first-child {
+  border-top: 1px solid #ede2d8;
+}
+
+.award-item:hover {
+  background-color: rgba(181, 138, 135, 0.06);
 }
 
 .award-year {
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--color-rose);
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .award-title {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-ink);
 }
 
 .award-company {
-  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
   color: var(--color-rose);
   text-align: right;
 }
@@ -611,7 +700,7 @@ img {
   max-width: 900px;
   width: 100%;
   padding: 5rem 3rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  border-top: 4px solid var(--color-rose);
 }
 
 .contact-heading {
@@ -619,9 +708,18 @@ img {
   font-size: 4rem;
   font-weight: 700;
   color: var(--color-ink);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.01em;
   line-height: 1;
+}
+
+.contact-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-rose);
+  margin: 1.5rem auto 2.5rem;
 }
 
 .contact-links {
@@ -638,12 +736,14 @@ img {
   text-decoration: none;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--color-rose);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 .contact-link:hover {
-  color: var(--color-ink);
-  border-bottom-color: var(--color-ink);
+  color: #8e6360;
+  border-bottom-color: #8e6360;
+  transform: translateY(-1px);
 }
 
 /* ---------- Writing Page ---------- */
@@ -768,6 +868,15 @@ img {
   max-width: 600px;
 }
 
+.fw-header h1::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-rose);
+  margin: 1rem 0 0;
+}
+
 .fw-header-subtitle {
   font-family: var(--font-display);
   font-style: italic;
@@ -865,6 +974,17 @@ img {
   text-transform: uppercase;
   color: var(--color-rose);
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.fw-section-label::before {
+  content: '';
+  width: 32px;
+  height: 1.5px;
+  background: var(--color-rose);
+  display: inline-block;
 }
 
 .fw-coverage-grid {
@@ -940,7 +1060,7 @@ img {
 .fw-featured-article {
   background: #ffffff;
   border: 1px solid #ede2d8;
-  max-width: 680px;
+  max-width: 520px;
   margin: 0 auto;
   text-decoration: none;
   color: inherit;
@@ -1011,7 +1131,7 @@ img {
 .fw-owned-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   background: var(--color-cream-light);
   flex-shrink: 0;
@@ -1079,6 +1199,13 @@ img {
   font-weight: 500;
   color: var(--color-ink);
   white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.fw-tag:hover {
+  border-color: var(--color-rose);
+  color: var(--color-rose);
+  transform: translateY(-1px);
 }
 
 /* Non-clickable static card variant (same look as .fw-combined-card but no hover) */
@@ -1129,10 +1256,60 @@ img {
 .fw-combined-thumb {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   background: var(--color-cream-light);
   flex-shrink: 0;
+}
+
+/* Video variant - fills entire thumbnail with play button overlay */
+.fw-combined-card.is-video {
+  position: relative;
+}
+
+.fw-combined-card.is-video .fw-combined-thumb {
+  object-fit: cover;
+  background: #000;
+}
+
+/* Play button - centered over the thumbnail (top half of card) */
+.fw-combined-card.is-video .fw-combined-thumb-wrap {
+  position: relative;
+}
+
+.fw-combined-card.is-video .fw-combined-thumb-wrap::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
+  pointer-events: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.fw-combined-card.is-video .fw-combined-thumb-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent #ffffff;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.fw-combined-card.is-video:hover .fw-combined-thumb-wrap::before {
+  background: rgba(0, 0, 0, 0.75);
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 .fw-combined-text {
@@ -1374,7 +1551,8 @@ img {
 
   .hero {
     grid-template-columns: 1fr;
-    padding: 3rem 1.5rem 5rem;
+    padding: 3rem 1.5rem;
+    margin: 1.5rem auto;
     text-align: center;
   }
 
